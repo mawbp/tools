@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tools-web-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      # Anonymous volume prevents local node_modules on the host from overwriting container-built dependencies
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      # Uncomment the line below if live reloading (HMR) is not picking up file changes (e.g. on WSL or macOS mounts)
+      # - CHOKIDAR_USEPOLLING=true
+    restart: unless-stopped
