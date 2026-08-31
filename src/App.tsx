@@ -29,6 +29,7 @@ import { LandingPage } from "@/pages/LandingPage"
 import { QRCodeGenerator } from "@/pages/QRCodeGenerator"
 import { UUIDGenerator } from "@/pages/UUIDGenerator"
 import { AboutPage } from "@/pages/AboutPage"
+import { PasswordGenerator } from "@/pages/PasswordGenerator"
 import { ComingSoonPage } from "@/pages/ComingSoonPage"
 
 export function App() {
@@ -227,6 +228,7 @@ export function App() {
           } />
           <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
           <Route path="/tools/uuid" element={<UUIDGenerator />} />
+          <Route path="/tools/password" element={<PasswordGenerator />} />
           <Route path="/tools/:toolId" element={<ComingSoonPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
