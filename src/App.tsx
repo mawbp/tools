@@ -76,7 +76,6 @@ export function App() {
     )
   }
 
-
   useEffect(() => {
     setIsSidebarOpen(false)
     menuGroups.forEach(group => {
@@ -106,20 +105,20 @@ export function App() {
           }}
           className="p-2 rounded-base border-2 bg-secondary-background border-border text-foreground/80 flex-shrink-0 hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY hover:shadow-shadow hover:bg-main hover:text-main-foreground transition-all cursor-pointer"
         >
-          {theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) 
-            ? <Sun className="size-4" /> 
+          {theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ? <Sun className="size-4" />
             : <Moon className="size-4" />}
         </button>
       </div>
 
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-overlay/50 z-40 md:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
-      
+
       <aside className={`flex-col w-72 md:w-64 bg-secondary-background border-r-4 border-border p-6 h-svh fixed md:sticky top-0 left-0 z-50 transition-transform duration-300 md:translate-x-0 flex ${isSidebarOpen ? "translate-x-0 shadow-[4px_0px_0px_0px_rgba(0,0,0,1)] md:shadow-none" : "-translate-x-full md:shadow-none"}`}>
         <div className="flex items-center justify-between border-b-4 border-border pb-4 shrink-0 mb-6">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity" onClick={() => setIsSidebarOpen(false)}>
