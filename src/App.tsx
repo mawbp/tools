@@ -27,7 +27,6 @@ import { useTheme } from "@/components/theme-provider"
 // Import pages
 import { LandingPage } from "@/pages/LandingPage"
 import { QRCodeGenerator } from "@/pages/QRCodeGenerator"
-import { UUIDGenerator } from "@/pages/UUIDGenerator"
 import { AboutPage } from "@/pages/AboutPage"
 import { ComingSoonPage } from "@/pages/ComingSoonPage"
 
@@ -180,53 +179,14 @@ export function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={
-            <div className="flex flex-col gap-6 max-w-5xl">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-heading font-black tracking-tight">Dashboard 🚀</h1>
-                <p className="text-muted-foreground font-medium mt-1">Select a developer tool below to get started.</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Link
-                  to="/tools/uuid"
-                  className="bg-secondary-background border-4 border-border p-6 rounded-base shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col justify-between gap-4 group"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="bg-main text-main-foreground p-3 rounded-base border-2 border-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                      <Dna className="size-6" />
-                    </div>
-                    <span className="bg-chart-4 text-main-foreground text-[10px] font-black uppercase px-2 py-0.5 rounded border border-border">
-                      Ready
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-black text-lg group-hover:text-main transition-colors">UUID Generator</h3>
-                    <p className="text-xs text-muted-foreground font-medium mt-1">Generate UUID v4, v7, v1 in bulk & validate any UUID format.</p>
-                  </div>
-                </Link>
-
-                <Link
-                  to="/tools/qrcode"
-                  className="bg-secondary-background border-4 border-border p-6 rounded-base shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col justify-between gap-4 group"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="bg-main text-main-foreground p-3 rounded-base border-2 border-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                      <QrCode className="size-6" />
-                    </div>
-                    <span className="bg-chart-4 text-main-foreground text-[10px] font-black uppercase px-2 py-0.5 rounded border border-border">
-                      Ready
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-black text-lg group-hover:text-main transition-colors">Code / QR Generator</h3>
-                    <p className="text-xs text-muted-foreground font-medium mt-1">Create QR Codes, Code128, and DataMatrix with custom colors & logo.</p>
-                  </div>
-                </Link>
+            <div className="flex flex-col gap-6">
+              <h1 className="text-3xl font-heading font-black tracking-tight">Dashboard</h1>
+              <div className="bg-secondary-background border-4 border-border p-6 rounded-base shadow-shadow">
+                <p>Welcome to the Dashboard.</p>
               </div>
             </div>
           } />
           <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
-          <Route path="/tools/uuid" element={<UUIDGenerator />} />
           <Route path="/tools/:toolId" element={<ComingSoonPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
