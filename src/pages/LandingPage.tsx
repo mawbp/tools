@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Sparkles, Play, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -19,7 +18,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
         <span>React 19 + Bun</span>
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center bg-secondary-background border-4 border-border p-8 md:p-12 rounded-base shadow-shadow max-w-md w-full text-center transform hover:scale-[1.01] transition-transform duration-200">
-        <h1 className="text-5xl md:text-6xl font-heading font-blackd tracking-tight text-foreground mb-6 break-words drop-shadow-[3px_3px_0px_var(--border)] leading-none">MyTools</h1>
+        <h1 className="text-5xl md:text-6xl font-heading font-black tracking-tight text-foreground mb-6 break-words drop-shadow-[3px_3px_0px_var(--border)] leading-none">MyTools</h1>
         <p className="text-muted-foreground text-sm md:text-base mb-8 max-w-[280px] font-medium leading-normal flex items-center justify-center">Click start to launch the application.</p>
         <Button size="lg" className="relative font-bold text-base px-8 py-6 group flex items-center gap-2 cursor-pointer" onClick={onStart}>
           <Play className="size-5 group-hover:scale-110 transition-transform" />
